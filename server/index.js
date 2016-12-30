@@ -4,10 +4,12 @@ const http = require('http'); // native node library; works with incoming http r
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const app = express();
+const router = require('./router');
 
 // App Setup (getting express working the way we want)
 app.use(morgan('combined')); // middleware; logging framework; logs incoming requests / used for debugging
 app.use(bodyParser.json({ type: '*/*' })); // middleware; parse incoming requests into json
+router(app);
 
 // Server Setup (getting express app to talk to outside world)
 const port = process.env.PORT || 3090;
