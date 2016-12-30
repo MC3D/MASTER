@@ -5,6 +5,10 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const app = express();
 const router = require('./router');
+const mongoose = require('mongoose');
+
+// DB Setup
+mongoose.connect('mongodb://localhost:auth/therabbithole');
 
 // App Setup (getting express working the way we want)
 app.use(morgan('combined')); // middleware; logging framework; logs incoming requests / used for debugging
