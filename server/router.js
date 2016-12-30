@@ -4,7 +4,6 @@ module.exports = function(app) {
   });
 }
 
-
 // req => request
 // res => response
 // next => mostly used for error handling
