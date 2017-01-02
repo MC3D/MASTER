@@ -22,7 +22,7 @@ userSchema.pre('save', function(next){
     bcrypt.hash(user.passoword, salt, null, function(err, hash) {
       if (err) { return next(err); }
 
-      // overwirte plain text password with encrypted password
+      // overwrite plain text password with encrypted password
       user.password = hash;
       // go ahead and save the model
       next();
