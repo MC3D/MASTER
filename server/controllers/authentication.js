@@ -4,12 +4,12 @@ const config = require('../config');
 
 function userToken(user) {
   const timestamp = new Date().getTime();
-  return jwt.encode({ sub: user.id, iat: timestamp }, config.secret );
+  return jwt.encode({ sub: user.id, iat: timestamp }, config.secret);
 }
 
 exports.signin = function(req, res, next) {
   // auth is complete; give user a token
-  
+  res.send({ token: userToken(req.user) });
 }
 
 exports.signup = function(req, res, next) {

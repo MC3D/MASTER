@@ -10,15 +10,14 @@ const localOptions = { usernameField: 'email' };
 const localLogin = new LocalStrategy(localOptions, function(email, password, done) {
   // verify email and password, call done with user if verified
   // otherwise, call done with false
-  User.findOne( { email: email }, function(err, user) {
+  User.findOne({ email: email }, function(err, user) {
     if (err) { return done(err); }
-    if(!user) { return done(null, false); }
+    if (!user) { return done(null, false); }
 
     // compare passwords ('password' equals user.password)
     user.comparePassword(password, function(err, isMatch) {
       if (err) { return done(err); }
-      if (!isMatch) { return done(null, false); }
-
+      if (isMatch) { return done(null, false); }
       return done(null, user);
     });
   });
