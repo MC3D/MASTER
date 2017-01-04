@@ -2,22 +2,22 @@ import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
 
 class Signin extends Component {
-  _handleSubmit({ email, password }){
-    console.log(email,password);
+  _handleSubmit({ email, password }) {
+    console.log({ email, password });
   }
 
   render() {
-    const { handleSubmit, fields: { email, password }} = this.props;
+      const { handleSubmit, fields: { email, password }} = this.props;
 
-    return(
+      return (
       <form onSubmit={handleSubmit(this._handleSubmit.bind(this))}>
         <fieldset className="form-group">
-          <input {...email} placeholder="email" className="form-control" />
+          <input {...email} className="form-control" placeholder="email" />
         </fieldset>
         <fieldset className="form-group">
-          <input {...password} placeholder="password" className="form-control" />
+          <input {...password} type="password" className="form-control" placeholder="password" />
         </fieldset>
-        <input type="submit" value="Sign In" />
+        <input type="submit" value="Sign in" />
       </form>
     );
   }
