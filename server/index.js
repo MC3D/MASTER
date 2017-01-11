@@ -6,12 +6,14 @@ const morgan = require('morgan');
 const app = express();
 const router = require('./router');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 // DB Setup
 mongoose.connect('mongodb://localhost:auth/therabbithole');
 
 // App Setup (getting express working the way we want)
 app.use(morgan('combined')); // middleware; logging framework; logs incoming requests / used for debugging
+app.use(cors());
 app.use(bodyParser.json({ type: '*/*' })); // middleware; parse incoming requests into json
 router(app);
 
