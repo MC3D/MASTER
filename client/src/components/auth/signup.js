@@ -9,16 +9,14 @@ class Signup extends Component {
     return (
       <form>
         <fieldset className="form-group">
-          <label>Email:</label>
-          <input className="form-control" {...email}></input>
-        </fieldset>
-        <fieldset className="form-group" {...password}>
-          <label>Password:</label>
-          <input className="form-control" type="password"/>
+          <input className="form-control" {...email} placeholder="email" />
         </fieldset>
         <fieldset className="form-group">
-          <label>Confirm Password:</label>
-          <input className="form-control" {...passwordConfirm} type="password" />
+          <input className="form-control" {...password} type="password" placeholder="password" />
+          {password.touched && password.error && <div className="error">{password.error}</div>}
+        </fieldset>
+        <fieldset className="form-group">
+            <input className="form-control" {...passwordConfirm} type="password" placeholder="confirm password" />
         </fieldset>
         <button action="submit" className="btn btn-primary">Register</button>
       </form>
@@ -26,7 +24,18 @@ class Signup extends Component {
   }
 }
 
+function validate(formProps) {
+  const errors = {};
+
+  if (formProps.password !== formProps.passwordConfirm) {
+    errors.password = "Passwords must match"
+  }
+
+  return errors
+}
+
 export default reduxForm({
   form: 'signup',
-  fields: ['email', 'password', 'passwordConfirm']
+  fields: ['email', 'password', 'passwordConfirm'],
+  validate
 })(Signup);
