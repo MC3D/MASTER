@@ -13,6 +13,7 @@ mongoose.connect('mongodb://localhost:auth/therabbithole');
 
 // App Setup (getting express working the way we want)
 app.use(morgan('combined')); // middleware; logging framework; logs incoming requests / used for debugging
+// enables api server for cors requests
 app.use(cors());
 app.use(bodyParser.json({ type: '*/*' })); // middleware; parse incoming requests into json
 router(app);
