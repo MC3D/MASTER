@@ -11,7 +11,7 @@ class Signup extends Component {
   _renderAlert() {
     if (this.props.errorMessage) {
       return (
-        <div className="allert alert-danger">
+        <div className="alert alert-danger">
           <strong>Oops!</strong> {this.props.errorMessage}
         </div>
       )
