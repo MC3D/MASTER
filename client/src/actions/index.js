@@ -64,7 +64,22 @@ export function fetchMessage() {
       headers: { authorization: localStorage.getItem('token') }
     })
     .then(response => {
-      console.log(response);
+      dispatch({
+        type: FETCH_MESSAGE,
+        payload: response.data.message
+      })
     });
   }
 }
+
+// redux promise method
+// export function fetchMessage() {
+//   const request = axios.get(ROOT_URL, {
+//     headers: { authorization: localStorage.getItem('token') }
+//   });
+//
+//   return {
+//     type: FETCH_MESSAGE,
+//     payload: request
+//   };
+// }
