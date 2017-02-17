@@ -26,6 +26,7 @@ class Header extends Component {
   render() {
     return (
       <nav className="navbar navbar-light">
+        <i className="fa fa-bars" aria-hidden="true"></i>
         <Link to="/" className="navbar-brand">Home</Link>
         <ul className="nav navbar-nav">
           {this._renderLinks()}
