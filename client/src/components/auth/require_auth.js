@@ -12,7 +12,7 @@ export default function(ComposedComponent) {
     // if user is not authenticated, navigate to home route
     componentWillMount() {
       if (!this.props.authenticated) {
-        this.context.router.push('/');
+        this.context.router.push('/signin');
       }
     }
 

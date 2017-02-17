@@ -19,19 +19,20 @@ class Header extends Component {
         </li>,
         <li className="nav-item" key={2}>
           <Link className="nav-link" to="/signup">Register</Link>
-        </li>
+        </li>,
       ];
     }
   }
   render() {
     return (
-      <nav className="navbar navbar-light">
-        <i className="fa fa-bars" aria-hidden="true"></i>
-        <Link to="/" className="navbar-brand">Home</Link>
-        <ul className="nav navbar-nav">
-          {this._renderLinks()}
-        </ul>
-      </nav>
+      <div className="dropdown">
+          <button className="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <i className="fa fa-bars" aria-hidden="true"></i>
+          </button>
+           <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
+            {this._renderLinks()}
+          </ul>
+      </div>
     );
   }
 }
