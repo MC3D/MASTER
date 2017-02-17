@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
+import { browserHistory } from 'react-router';
 import { reduxForm } from 'redux-form';
 import * as actions from '../../actions';
 
 class Signin extends Component {
+  componentWillMount() {
+    if(this.props.authenticated){
+      browserHistory.push('/feature');
+    }
+  }
+
   _handleSubmit({ email, password }) {
     this.props.signinUser({ email, password })
   }
@@ -36,7 +43,7 @@ class Signin extends Component {
 }
 
 function mapStateToProps(state) {
-  return { errorMessage: state.auth.error };
+  return { errorMessage: state.auth.error, authenticated: state.auth.authenticated };
 }
 
 export default reduxForm({
