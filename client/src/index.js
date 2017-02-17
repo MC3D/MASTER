@@ -28,6 +28,7 @@ if (token) {
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
+      <Redirect from="/" to="/signin"/>
       <Route path="/" component={App}>
         <Route path="signin" component={Signin} />
         <Route path="signout" component={Signout} />
@@ -35,6 +36,7 @@ ReactDOM.render(
         <Route path="feature" component={RequireAuth(Feature)} />
         <Redirect path='*' to="/signin" />
       </Route>
+
     </Router>
   </Provider>
   , document.querySelector('.container'));
