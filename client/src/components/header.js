@@ -11,16 +11,19 @@ class Header extends Component {
           <Link className="nav-link" to="/signout">Sign Out</Link>
         </li>
       )
-    } else {
+    } else if (this.props.location === "/signup"){
       // shows links to sign in
-      return [
-        <li className="nav-item" key={1}>
+      return (
+        <li className="nav-item">
           <Link className="nav-link" to="/signin">Sign In</Link>
-        </li>,
-        <li className="nav-item" key={2}>
+        </li>
+      )
+    } else {
+      return (
+        <li className="nav-item">
           <Link className="nav-link" to="/signup">Register</Link>
-        </li>,
-      ];
+        </li>
+      )
     }
   }
   render() {
@@ -39,7 +42,7 @@ class Header extends Component {
 
 function mapStateToProps(state) {
   return {
-    authenticated: state.auth.authenticated
+    authenticated: state.auth.authenticated,
   }
 }
 
