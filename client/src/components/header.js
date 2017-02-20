@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
-class Header extends Component {
-  
+export default class Header extends Component {
+
   render() {
     return (
       <div className="dropdown">
@@ -20,10 +20,10 @@ class Header extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    authenticated: state.auth.authenticated,
-  }
-}
-
-export default connect(mapStateToProps)(Header);
+// function mapStateToProps(state) {
+//   return {
+//     authenticated: state.auth.authenticated,
+//   }
+// }
+//
+// export default connect(mapStateToProps)(Header);
