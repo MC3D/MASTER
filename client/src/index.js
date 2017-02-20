@@ -31,7 +31,6 @@ ReactDOM.render(
       <Redirect from="/" to="/signin"/>
       <Route path="/" component={App}>
         <Route path="signin" component={Signin} />
-        <Route path="signout" component={Signout} />
         <Route path="signup" component={Signup} />
         <Route path="feature" component={RequireAuth(Feature)} />
         <Redirect path='*' to="/signin" />
