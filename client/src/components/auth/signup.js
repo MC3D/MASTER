@@ -3,6 +3,12 @@ import { reduxForm } from 'redux-form';
 import * as actions from '../../actions';
 
 class Signup extends Component {
+  componentWillMount() {
+    if(this.props.authenticated){
+      browserHistory.push('/feature');
+    }
+  }
+
   _handleSubmit(formProps) {
     // call action creator to sign up user
     this.props.signupUser(formProps);
