@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
 import { Link } from 'react-router';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
-export default class Header extends Component {
+class Header extends Component {
+
+  _signOut() {
+    this.props.userSignout();
+  }
 
   render() {
     return (
@@ -12,7 +17,7 @@ export default class Header extends Component {
           </button>
            <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
              <li className="nav-item">
-               <Link className="nav-link" to="/signout">Sign Out</Link>
+               <a href="#" onClick={this._signOut.bind(this)}>Sign Out</a>
              </li>
           </ul>
       </div>
@@ -20,10 +25,4 @@ export default class Header extends Component {
   }
 }
 
-// function mapStateToProps(state) {
-//   return {
-//     authenticated: state.auth.authenticated,
-//   }
-// }
-//
-// export default connect(mapStateToProps)(Header);
+export default connect(null, actions)(Header)

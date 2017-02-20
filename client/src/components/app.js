@@ -6,8 +6,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        {this.props.authenticated ?  <Header /> : ''}
-        {this.props.children}
+        { this.props.authenticated ?  <Header /> : null }
+        { this.props.children }
       </div>
     );
   }
