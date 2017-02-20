@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import { reduxForm } from 'redux-form';
 import * as actions from '../../actions';
 
@@ -30,6 +31,7 @@ class Signup extends Component {
     // needs cleanup; DRY
     return (
       <form onSubmit={handleSubmit(this._handleSubmit.bind(this))}>
+        <span className="form_credentials__toggle">Already have an account?<Link className="btn btn-link" to="/signin">Signin</Link></span>
         <fieldset className="form-group">
           <input className="form-control" {...email} placeholder="email" />
           {email.touched && email.error && <div className="error">{email.error}</div>}
@@ -43,7 +45,8 @@ class Signup extends Component {
             {passwordConfirm.touched && passwordConfirm.error && <div className="error">{passwordConfirm.error}</div>}
       </fieldset>
         {this._renderAlert()}
-        <input type="submit" value="Register" className="btn btn-primary" />
+
+        <input className="btn btn-primary" type="submit" value="Register" />
       </form>
     );
   }

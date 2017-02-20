@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { browserHistory } from 'react-router';
+import { Link, browserHistory } from 'react-router';
 import { reduxForm } from 'redux-form';
 import * as actions from '../../actions';
 
@@ -28,7 +28,12 @@ class Signin extends Component {
       const { handleSubmit, fields: { email, password }} = this.props;
 
       return (
-          <form onSubmit={handleSubmit(this._handleSubmit.bind(this))}>
+          <form className="form-credentials" onSubmit={handleSubmit(this._handleSubmit.bind(this))}>
+            <span className="form_credentials__toggle">New to Vosco?
+              <Link className="btn btn-link" to="/signup">Register</Link>
+              <span>|</span>
+              <Link className="btn btn-link" to="/reset">Forgot Password</Link>
+            </span>
             <fieldset className="form-group">
               <input {...email} className="form-control" placeholder="email" />
             </fieldset>
@@ -36,7 +41,7 @@ class Signin extends Component {
               <input {...password} type="password" className="form-control" placeholder="password" />
             </fieldset>
             {this._renderAlert()}
-            <input type="submit" value="Sign in" className="btn btn-primary"/>
+            <input className="btn btn-primary" type="submit" value="Sign in" />
           </form>
     );
   }

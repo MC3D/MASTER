@@ -1,0 +1,6 @@
+.form_credentials__toggle {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: baseline;
+   align-items: baseline;
+}

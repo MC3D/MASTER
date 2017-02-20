@@ -3,10 +3,9 @@ import Header from './header';
 
 export default class App extends Component {
   render() {
-    const location = this.props.location.pathname;
     return (
       <div>
-        <Header location = { location } />
+        <Header />
         {this.props.children}
       </div>
     );

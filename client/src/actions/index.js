@@ -54,7 +54,7 @@ export function authError(error) {
 
 export function userSignout() {
   localStorage.removeItem('token');
-
+  browserHistory.push('/signin');
   return { type: UNAUTH_USER }
 }
 

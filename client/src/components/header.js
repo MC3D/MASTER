@@ -3,29 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
 class Header extends Component {
-  _renderLinks() {
-    if(this.props.authenticated){
-      // show a link to sign out
-      return (
-        <li className="nav-item">
-          <Link className="nav-link" to="/signout">Sign Out</Link>
-        </li>
-      )
-    } else if (this.props.location === "/signup"){
-      // shows links to sign in
-      return (
-        <li className="nav-item">
-          <Link className="nav-link" to="/signin">Sign In</Link>
-        </li>
-      )
-    } else {
-      return (
-        <li className="nav-item">
-          <Link className="nav-link" to="/signup">Register</Link>
-        </li>
-      )
-    }
-  }
+  
   render() {
     return (
       <div className="dropdown">
@@ -33,7 +11,9 @@ class Header extends Component {
             <i className="fa fa-bars" aria-hidden="true"></i>
           </button>
            <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
-            {this._renderLinks()}
+             <li className="nav-item">
+               <Link className="nav-link" to="/signout">Sign Out</Link>
+             </li>
           </ul>
       </div>
     );
