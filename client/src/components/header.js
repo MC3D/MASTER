@@ -15,7 +15,7 @@ class Header extends Component {
           <button className="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             <i className="fa fa-bars" aria-hidden="true"></i>
           </button>
-           <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
+           <ul className="dropdown-menu">
              <li className="nav-item">
                <a href="#" onClick={event => this._signOut()}>Sign Out</a>
              </li>

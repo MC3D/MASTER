@@ -6,7 +6,7 @@ import * as actions from '../../actions';
 class Signin extends Component {
   componentWillMount() {
     if(this.props.authenticated){
-      browserHistory.push('/feature');
+      browserHistory.push('/welcome');
     }
   }
 
