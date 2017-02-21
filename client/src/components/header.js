@@ -17,7 +17,7 @@ class Header extends Component {
           </button>
            <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
              <li className="nav-item">
-               <a href="#" onClick={this._signOut.bind(this)}>Sign Out</a>
+               <a href="#" onClick={event => this._signOut()}>Sign Out</a>
              </li>
           </ul>
       </div>

@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 // DB Setup
-mongoose.connect('mongodb://localhost:auth/therabbithole');
+mongoose.connect('mongodb://localhost:auth/vosco');
 
 // App Setup (getting express working the way we want)
 app.use(morgan('combined')); // middleware; logging framework; logs incoming requests / used for debugging
