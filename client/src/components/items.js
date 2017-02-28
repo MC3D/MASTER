@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
-class Feature extends Component {
+class Items extends Component {
   componentWillMount() {
     this.props.fetchItems();
   }
@@ -32,4 +32,4 @@ function mapStateToProps(state) {
   return { items: state.auth.items }
 }
 
-export default connect(mapStateToProps, actions)(Feature);
+export default connect(mapStateToProps, actions)(Items);
