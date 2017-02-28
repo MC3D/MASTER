@@ -4,3 +4,7 @@
   -webkit-align-items: baseline;
    align-items: baseline;
 }
+
+.btn.dropdown__link {
+  text-align: -webkit-auto;
+}

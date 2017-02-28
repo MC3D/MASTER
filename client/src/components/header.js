@@ -17,6 +17,8 @@ class Header extends Component {
           </button>
            <ul className="dropdown-menu">
              <li className="nav-item">
+               <Link className="btn btn-link dropdown__link" to="/welcome">Welcome</Link>
+               <Link className="btn btn-link dropdown__link" to="/items">Items</Link>
                <a href="#" onClick={event => this._signOut()}>Sign Out</a>
              </li>
           </ul>
