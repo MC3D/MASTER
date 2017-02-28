@@ -8,21 +8,27 @@ class Items extends Component {
   }
 
   render() {
-    const { items } = this.props;
+    let { items } = this.props;
     if(!items) {
       return <div>Loading ...</div>
     }
-    var list = this.props.items.map(function(item, index){
+    items = this.props.items.map(function(item, index){
       return (
-        <li key={index}>
-          <h3>{item.title}</h3>
-          <span>{item.description}</span>
-        </li>
+        <div className="col-sm-6 col-md-4" key={ index }>
+          <div className="thumbnail">
+            <img src={ item.image } alt={item.title} />
+            <div className="caption">
+              <h3>{ item.title }</h3>
+              <p>...</p>
+              <p><a href="#" className="btn btn-primary" role="button">Button</a> <a href="#" className="btn btn-default" role="button">Button</a></p>
+            </div>
+          </div>
+        </div>
       )
     });
     return (
-      <div>
-        { list }
+      <div className="row">
+        { items }
       </div>
     )
   }

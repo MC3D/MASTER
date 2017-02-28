@@ -10,9 +10,9 @@ module.exports = function(app) {
     res.send({
       message: 'hey you',
       items: [
-        { title: 'blank title one', description: 'blank description' },
-        { title: 'blank title two', description: 'blank description' },
-        { title: 'blank title three', description: 'blank description' }
+        { title: 'Bananas Foster Caramel Truffle', description: 'banana, sugar, rum, cinnamon, chocolate truffle', vendor: 'French Broad Chocolate Lounge', price: 12, image: 'https://frenchbroadchocolates.com/uploads/gallery/7/products/14736300871158518815.jpg' },
+        { title: 'Aztec Chocolate Snakaroons', description: 'coconut macaroons with dark chocolate, sea salt and spices', vendor: 'Lauging Giraffe Organics', price: 'unknown', image: 'https://frenchbroadchocolates.com/uploads/gallery/7/products/14736300871158518815.jpg' },
+        { title: 'Octopus Ring', description: 'Titanium Steel Gothic Octopus Finger Open Ring', vendor: 'online', price: 10, image: 'https://frenchbroadchocolates.com/uploads/gallery/7/products/14736300871158518815.jpg' }
       ]
     });
   });
