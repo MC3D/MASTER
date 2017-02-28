@@ -4,18 +4,32 @@ import * as actions from '../actions';
 
 class Feature extends Component {
   componentWillMount() {
-    this.props.fetchMessage();
+    this.props.fetchItems();
   }
 
   render() {
+    const { items } = this.props;
+    if(!items) {
+      return <div>Loading ...</div>
+    }
+    var list = this.props.items.map(function(item, index){
+      return (
+        <li key={index}>
+          <h3>{item.title}</h3>
+          <span>{item.description}</span>
+        </li>
+      )
+    });
     return (
-      <div>{this.props.message}</div>
+      <div>
+        { list }
+      </div>
     )
   }
 }
 
 function mapStateToProps(state) {
-  return { message: state.auth.message }
+  return { items: state.auth.items }
 }
 
 export default connect(mapStateToProps, actions)(Feature);
